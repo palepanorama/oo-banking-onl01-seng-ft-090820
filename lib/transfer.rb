@@ -18,7 +18,9 @@ class Transfer
   
   def execute_transaction 
     if @sender.balance < @amount 
-      
+      "Transaction rejected. Please check your account balance."
+    elsif 
+    
   end 
   
   def reverse_transfer 
