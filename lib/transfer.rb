@@ -1,3 +1,4 @@
+require 'pry'
 class Transfer
   attr_accessor :sender, :receiver, :status, :amount 
   
@@ -20,6 +21,7 @@ class Transfer
     if @sender.balance < @amount 
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
+      binding.pry 
     elsif @status != "complete" && @sender.valid? 
       @receiver.balance = @receiver.balance + amount
       @sender.balance = @sender.balance - amount
